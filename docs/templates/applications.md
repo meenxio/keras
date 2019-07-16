@@ -212,7 +212,7 @@ Xception V1 model, with weights pre-trained on ImageNet.
 On ImageNet, this model gets to a top-1 validation accuracy of 0.790
 and a top-5 validation accuracy of 0.945.
 
-Note that this model only supports the data format `'channels_last'` (height, width, channels).
+This model and can be built both with `'channels_first'` data format (channels, height, width) or `'channels_last'` data format (height, width, channels).
 
 The default input size for this model is 299x299.
 
@@ -231,10 +231,10 @@ The default input size for this model is 299x299.
     when `include_top` is `False`.
     - `None` means that the output of the model will be
         the 4D tensor output of the
-        last convolutional layer.
+        last convolutional block.
     - `'avg'` means that global average pooling
         will be applied to the output of the
-        last convolutional layer, and thus
+        last convolutional block, and thus
         the output of the model will be a 2D tensor.
     - `'max'` means that global max pooling will
         be applied.
@@ -286,10 +286,10 @@ The default input size for this model is 224x224.
     when `include_top` is `False`.
     - `None` means that the output of the model will be
         the 4D tensor output of the
-        last convolutional layer.
+        last convolutional block.
     - `'avg'` means that global average pooling
         will be applied to the output of the
-        last convolutional layer, and thus
+        last convolutional block, and thus
         the output of the model will be a 2D tensor.
     - `'max'` means that global max pooling will
         be applied.
@@ -341,10 +341,10 @@ The default input size for this model is 224x224.
     when `include_top` is `False`.
     - `None` means that the output of the model will be
         the 4D tensor output of the
-        last convolutional layer.
+        last convolutional block.
     - `'avg'` means that global average pooling
         will be applied to the output of the
-        last convolutional layer, and thus
+        last convolutional block, and thus
         the output of the model will be a 2D tensor.
     - `'max'` means that global max pooling will
         be applied.
@@ -405,10 +405,10 @@ The default input size for this model is 224x224.
     when `include_top` is `False`.
     - `None` means that the output of the model will be
         the 4D tensor output of the
-        last convolutional layer.
+        last convolutional block.
     - `'avg'` means that global average pooling
         will be applied to the output of the
-        last convolutional layer, and thus
+        last convolutional block, and thus
         the output of the model will be a 2D tensor.
     - `'max'` means that global max pooling will
         be applied.
@@ -466,10 +466,10 @@ The default input size for this model is 299x299.
     when `include_top` is `False`.
     - `None` means that the output of the model will be
         the 4D tensor output of the
-        last convolutional layer.
+        last convolutional block.
     - `'avg'` means that global average pooling
         will be applied to the output of the
-        last convolutional layer, and thus
+        last convolutional block, and thus
         the output of the model will be a 2D tensor.
     - `'max'` means that global max pooling will
         be applied.
@@ -521,10 +521,10 @@ The default input size for this model is 299x299.
     when `include_top` is `False`.
     - `None` means that the output of the model will be
         the 4D tensor output of the
-        last convolutional layer.
+        last convolutional block.
     - `'avg'` means that global average pooling
         will be applied to the output of the
-        last convolutional layer, and thus
+        last convolutional block, and thus
         the output of the model will be a 2D tensor.
     - `'max'` means that global max pooling will
         be applied.
@@ -555,7 +555,7 @@ keras.applications.mobilenet.MobileNet(input_shape=None, alpha=1.0, depth_multip
 
 MobileNet model, with weights pre-trained on ImageNet.
 
-Note that this model only supports the data format `'channels_last'` (height, width, channels).
+This model and can be built both with `'channels_first'` data format (channels, height, width) or `'channels_last'` data format (height, width, channels).
 
 The default input size for this model is 224x224.
 
@@ -589,10 +589,10 @@ The default input size for this model is 224x224.
     when `include_top` is `False`.
     - `None` means that the output of the model
     will be the 4D tensor output of the
-        last convolutional layer.
+        last convolutional block.
     - `'avg'` means that global average pooling
         will be applied to the output of the
-        last convolutional layer, and thus
+        last convolutional block, and thus
         the output of the model will be a
         2D tensor.
     - `'max'` means that global max pooling will
@@ -651,10 +651,10 @@ The default input size for this model is 224x224.
     when `include_top` is `False`.
     - `None` means that the output of the model will be
         the 4D tensor output of the
-        last convolutional layer.
+        last convolutional block.
     - `avg` means that global average pooling
         will be applied to the output of the
-        last convolutional layer, and thus
+        last convolutional block, and thus
         the output of the model will be a 2D tensor.
     - `max` means that global max pooling will
         be applied.
@@ -712,10 +712,10 @@ NASNetMobile model is 224x224.
     when `include_top` is `False`.
     - `None` means that the output of the model
     will be the 4D tensor output of the
-        last convolutional layer.
+        last convolutional block.
     - `'avg'` means that global average pooling
         will be applied to the output of the
-        last convolutional layer, and thus
+        last convolutional block, and thus
         the output of the model will be a
         2D tensor.
     - `'max'` means that global max pooling will
@@ -747,7 +747,7 @@ keras.applications.mobilenet_v2.MobileNetV2(input_shape=None, alpha=1.0, include
 
 MobileNetV2 model, with weights pre-trained on ImageNet.
 
-Note that this model only supports the data format `'channels_last'` (height, width, channels).
+This model and can be built both with `'channels_first'` data format (channels, height, width) or `'channels_last'` data format (height, width, channels).
 
 The default input size for this model is 224x224.
 
@@ -783,10 +783,10 @@ The default input size for this model is 224x224.
     when `include_top` is `False`.
     - `None` means that the output of the model
     will be the 4D tensor output of the
-        last convolutional layer.
+        last convolutional block.
     - `'avg'` means that global average pooling
         will be applied to the output of the
-        last convolutional layer, and thus
+        last convolutional block, and thus
         the output of the model will be a
         2D tensor.
     - `'max'` means that global max pooling will

@@ -255,7 +255,7 @@ class RNN(Layer):
                 for the cell, the value will be inferred by the first element
                 of the `state_size`.
             It is also possible for `cell` to be a list of RNN cell instances,
-            in which cases the cells get stacked on after the other in the RNN,
+            in which cases the cells get stacked one after the other in the RNN,
             implementing an efficient stacked RNN.
         return_sequences: Boolean. Whether to return the last output
             in the output sequence, or the full sequence.
@@ -610,9 +610,9 @@ class RNN(Layer):
                              ' initial states.')
         input_shape = K.int_shape(inputs)
         timesteps = input_shape[1]
-        if self.unroll and timesteps in [None, 1]:
+        if self.unroll and timesteps is None:
             raise ValueError('Cannot unroll a RNN if the '
-                             'time dimension is undefined or equal to 1. \n'
+                             'time dimension is undefined. \n'
                              '- If using a Sequential model, '
                              'specify the time dimension by passing '
                              'an `input_shape` or `batch_input_shape` '
@@ -1269,7 +1269,8 @@ class GRUCell(Layer):
         input_dim = input_shape[-1]
 
         if isinstance(self.recurrent_initializer, initializers.Identity):
-            def recurrent_identity(shape, gain=1.):
+            def recurrent_identity(shape, gain=1., dtype=None):
+                del dtype
                 return gain * np.concatenate(
                     [np.identity(shape[0])] * (shape[1] // shape[0]), axis=1)
 
@@ -1872,7 +1873,8 @@ class LSTMCell(Layer):
         input_dim = input_shape[-1]
 
         if type(self.recurrent_initializer).__name__ == 'Identity':
-            def recurrent_identity(shape, gain=1.):
+            def recurrent_identity(shape, gain=1., dtype=None):
+                del dtype
                 return gain * np.concatenate(
                     [np.identity(shape[0])] * (shape[1] // shape[0]), axis=1)
 
